@@ -9,6 +9,10 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>@ViewData["Title"] - WebFinal</title>
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 	<link rel="stylesheet" href="~/WebFinal.styles.css" asp-append-version="true" />
@@ -16,147 +20,150 @@
 	<link rel="stylesheet" href="~/css/register.css" asp-append-version="true" />
 	<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" asp-append-version="true" />
+
 </head>
 <body class="sb-nav-fixed">
-	<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-		<!-- Navbar Brand-->
-		<a class="navbar-brand ps-3 " asp-controller="Home" asp-action="Index">Web Final</a>
-		
-		<ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-		
-			@if (Model != null)
-			{
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle text-white" id="navbarDropdown"  role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i> @Model.fullname</a>
-					<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-						<li>
-							<a class="dropdown-item" href="javascript:void(0);"
-						   data-bs-toggle="modal" data-bs-target="#modalChangePass">
-								Change Pass
+<div class="bg_image">
+		<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+			<!-- Navbar Brand-->
+			<a class="navbar-brand ps-3 " asp-controller="Home" asp-action="Index">Web Final</a>
+
+			<ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+
+				@if (Model != null)
+				{
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle text-white" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i> @Model.fullname</a>
+						<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+							<li>
+								<a class="dropdown-item" href="javascript:void(0);"
+							   data-bs-toggle="modal" data-bs-target="#modalChangePass">
+									Change Pass
+								</a>
+							</li>
+							<li><hr class="dropdown-divider" /></li>
+							<li><a class="dropdown-item" href="javascript:void(0);" onclick="signOut()">Logout</a></li>
+						</ul>
+					</li>
+				}
+
+			</ul>
+		</nav>
+		<div id="layoutSidenav">
+			<div id="layoutSidenav_nav">
+				<nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+					<div class="sb-sidenav-menu">
+						<div class="nav">
+							<div class="sb-sidenav-menu-heading">Home</div>
+							<a class="nav-link" asp-controller="Home" asp-action="Index">
+								<div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+								HomePage
 							</a>
-						</li>						
-						<li><hr class="dropdown-divider" /></li>
-						<li><a class="dropdown-item" href="javascript:void(0);" onclick="signOut()">Logout</a></li>
-					</ul>
-				</li>
-			}
-			
-		</ul>
-	</nav>
-	<div id="layoutSidenav">
-		<div id="layoutSidenav_nav">
-			<nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
-				<div class="sb-sidenav-menu">
-					<div class="nav">
-						<div class="sb-sidenav-menu-heading">Home</div>
-						<a class="nav-link" asp-controller="Home" asp-action="Index">
-							<div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-							HomePage
-						</a>
-						<div class="sb-sidenav-menu-heading">Interface</div>
-						<a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-							<div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-							Manage
-							<div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-						</a>
-						<div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-							<nav class="sb-sidenav-menu-nested nav">
-								<a class="nav-link" asp-controller="Home" asp-action="Student">Student</a>
-								<a class="nav-link" asp-controller="Home" asp-action="Lecturer">Lecturer</a>
-								<a class="nav-link" asp-controller="Home" asp-action="Subjects">Subjects</a>
-							</nav>
+							<div class="sb-sidenav-menu-heading">Interface</div>
+							<a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+								<div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+								Manage
+								<div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+							</a>
+							<div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+								<nav class="sb-sidenav-menu-nested nav">
+									<a class="nav-link" asp-controller="Home" asp-action="Student">Student</a>
+									<a class="nav-link" asp-controller="Home" asp-action="Lecturer">Lecturer</a>
+									<a class="nav-link" asp-controller="Home" asp-action="Subjects">Subjects</a>
+								</nav>
+							</div>
+
 						</div>
-						
 					</div>
-				</div>
-				<div class="sb-sidenav-footer">
-					<div class="small">&copy; 2023 - WebFinal -</div>
-					Tran Nguyen Bao Toan </br>
-					Do Hoang Cong Danh
-				</div>
-			</nav>
-		</div>
+					<div class="sb-sidenav-footer">
+						<div class="small">&copy; 2023 - WebFinal -</div>
+						Tran Nguyen Bao Toan </br>
+						Do Hoang Cong Danh
+					</div>
+				</nav>
+			</div>
 
-		<div class="container">
-			<main role="main" class="pb-3">
-				@RenderBody()
-			</main>
-		</div>
-		<div id="modalChangePass" class="modal fade" tabindex="-1">
+			<div class="container">
+				<main role="main" class="pb-3">
+					@RenderBody()
+				</main>
+			</div>
+			<div id="modalChangePass" class="modal fade" tabindex="-1">
 
-			<div class="modal-dialog modal-lg ">
-				<div class="modal-content">
+				<div class="modal-dialog modal-lg ">
+					<div class="modal-content">
 
-					<section class="vh-100 bg-image"
-							 style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
-						<div class="mask d-flex align-items-center h-100 gradient-custom-3">
-							<div class="container h-100">
-								<div class="row d-flex justify-content-center align-items-center h-100">
-									<div class="col-12 col-md-9 col-lg-7 col-xl-6 ">
-										<div class="card" style="border-radius: 15px">
-											<div class="card-body ">
-												<h2 class="text-uppercase text-center mb-2">Change Pass</h2>
+						<section class="vh-100 bg-image"
+								 style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+							<div class="mask d-flex align-items-center h-100 gradient-custom-3">
+								<div class="container h-100">
+									<div class="row d-flex justify-content-center align-items-center h-100">
+										<div class="col-12 col-md-9 col-lg-7 col-xl-6 ">
+											<div class="card" style="border-radius: 15px">
+												<div class="card-body ">
+													<h2 class="text-uppercase text-center mb-2">Change Pass</h2>
 
-												@if (Model != null)
-												{
-													<label for="staticEmail" class="col-sm-4">User Name:</label>
-													<div class="col-sm-4">
-														<input type="text" readonly class="form-control-plaintext"
-														   id="txtUsername" value="@(Model!=null?Model.username:"")">
+													@if (Model != null)
+													{
+														<label for="staticEmail" class="col-sm-4">User Name:</label>
+														<div class="col-sm-4">
+															<input type="text" readonly class="form-control-plaintext"
+															   id="txtUsername" value="@(Model!=null?Model.username:"")">
+														</div>
+													}
+
+													<div class="form-group mb-1 ">
+														<label class="form-label" for="txtOldPass">Old Password</label>
+														<input type="password" id="txtOldPass"
+															   class="form-control " name="txtOldPass" required />
+
 													</div>
-												}
 
-												<div class="form-group mb-1 ">
-													<label class="form-label" for="txtOldPass">Old Password</label>
-													<input type="password" id="txtOldPass"
-														   class="form-control " name="txtOldPass" required />
+													<div class="form-group  mb-1 ">
+														<label class="form-label" for="txtPassword1">New Password</label>
+														<input type="password" id="txtPassword1"
+															   class="form-control " name="txtPassword1" required />
 
+													</div>
+													<div class="form-group  mb-3 ">
+														<label class="form-label" for="txtPassword2">Retype New Password</label>
+														<input type="password" id="txtPassword2"
+															   class="form-control " name="txtPassword2" required />
+
+													</div>
+													<div class="d-flex justify-content-center mt-42 mb-3 row">
+														<button type="button"
+																onclick="changePass()"
+																class="btn btn-success btn-block btn-lg gradient-custom-4 text-body col-sm-4 ">
+															Change
+														</button>
+														<button type="button"
+																class="btn btn-success btn-block btn-lg gradient-custom-4 text-body col-sm-4 " data-bs-dismiss="modal">
+															Close
+														</button>
+													</div>
 												</div>
 
-												<div class="form-group  mb-1 ">
-													<label class="form-label" for="txtPassword1">New Password</label>
-													<input type="password" id="txtPassword1"
-														   class="form-control " name="txtPassword1" required />
-
-												</div>
-												<div class="form-group  mb-3 ">
-													<label class="form-label" for="txtPassword2">Retype New Password</label>
-													<input type="password" id="txtPassword2"
-														   class="form-control " name="txtPassword2" required />
-
-												</div>
-												<div class="d-flex justify-content-center mt-42 mb-3 row">
-													<button type="button"
-															onclick="changePass()"
-															class="btn btn-success btn-block btn-lg gradient-custom-4 text-body col-sm-4 ">
-														Change
-													</button>
-													<button type="button"
-															class="btn btn-success btn-block btn-lg gradient-custom-4 text-body col-sm-4 " data-bs-dismiss="modal">
-														Close
-													</button>
-												</div>
 											</div>
-
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-					</section>
+						</section>
+
+					</div>
 
 				</div>
-
 			</div>
-		</div>
-		<script src="~/lib/jquery/dist/jquery.min.js"></script>
-		<script src="~/lib/jquery/dist/jquery.tmpl.js"></script>
-		<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-		<script src="~/js/site.js" asp-append-version="true"></script>
-		@if (js != "")
-		{
-			<script src="~/js/@js" asp-append-version="true"></script>
-		}
-		@await RenderSectionAsync("Scripts", required: false)
+			<script src="~/lib/jquery/dist/jquery.min.js"></script>
+			<script src="~/lib/jquery/dist/jquery.tmpl.js"></script>
+			<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+			<script src="~/js/site.js" asp-append-version="true"></script>
+			@if (js != "")
+			{
+				<script src="~/js/@js" asp-append-version="true"></script>
+			}
+			@await RenderSectionAsync("Scripts", required: false)
+</div>	
 </body>
 </html>

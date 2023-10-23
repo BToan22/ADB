@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Github\\CMP175_WebFinalProject\\WebFinal\\WebFinal.csproj": {}
+    "C:\\Users\\Admin\\Desktop\\CMP175_WebFinalProject\\WebFinal\\WebFinal.csproj": {}
   },
   "projects": {
-    "F:\\Github\\CMP175_WebFinalProject\\WebFinal\\WebFinal.csproj": {
+    "C:\\Users\\Admin\\Desktop\\CMP175_WebFinalProject\\WebFinal\\WebFinal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Github\\CMP175_WebFinalProject\\WebFinal\\WebFinal.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\CMP175_WebFinalProject\\WebFinal\\WebFinal.csproj",
         "projectName": "WebFinal",
-        "projectPath": "F:\\Github\\CMP175_WebFinalProject\\WebFinal\\WebFinal.csproj",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\CMP175_WebFinalProject\\WebFinal\\WebFinal.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "F:\\Github\\CMP175_WebFinalProject\\WebFinal\\obj\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\CMP175_WebFinalProject\\WebFinal\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -84,7 +84,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

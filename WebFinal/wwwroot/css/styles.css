@@ -506,8 +506,10 @@ progress {
 
 .display-1 {
     font-size: calc(1.625rem + 4.5vw);
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.2;
+    color: rgb(241 255 254 / 50%);
+    font-family: Arial, sans-serif;
 }
 
 @media (min-width: 1200px) {
@@ -688,6 +690,8 @@ progress {
 @media (min-width: 1400px) {
     .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
         max-width: 1320px;
+        background-image: 'maxresdefault.png'
+
     }
 }
 
@@ -8008,6 +8012,7 @@ textarea.form-control-lg {
 
 .mb-4 {
     margin-bottom: 1.5rem !important;
+    position: relative;
 }
 
 .mb-5 {
@@ -12134,8 +12139,9 @@ body {
     }
 
 .sb-sidenav-dark {
-    background-color: #212529;
-    color: rgba(255, 255, 255, 0.5);
+    /*    background-color: #212529;*/
+    color: rgba(255, 255, 255, 1);
+    background: linear-gradient( 135deg, rgb(56 0 108) 0%, rgb(63 242 229) 100% );
 }
 
     .sb-sidenav-dark .sb-sidenav-menu .sb-sidenav-menu-heading {
@@ -12166,9 +12172,7 @@ body {
                 color: #fff;
             }
 
-    .sb-sidenav-dark .sb-sidenav-footer {
-        background-color: #343a40;
-    }
+   
 
 .sb-sidenav-light {
     background-color: #f8f9fa;
@@ -12368,3 +12372,36 @@ body {
     font-size: 0.75rem;
     border-radius: 0.25rem !important;
 }
+
+nav.sb-topnav.navbar.navbar-expand.navbar-dark.bg-dark {
+    background: linear-gradient( 135deg, rgb(56 0 108) 0%, rgb(58 182 173) 100% );
+}
+ul.dropdown-menu.dropdown-menu-end.show {
+    background: linear-gradient( 135deg, rgb(178 110 240) 0%, rgb(63 242 229) 100% );
+}
+body.sb-nav-fixed.vsc-initialized {
+    background-image: url(https://wallpapercave.com/wp/wp8174943.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+    opacity: 0.75;
+}
+a.nav-link {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+}
+a.navbar-brand.ps-3 {
+    /* font-family: Georgia, serif; */
+    font-family: 'Roboto', sans-serif;
+    font-weight: 800;
+}
+.sb-sidenav-footer {
+    font: Roboto;
+    font-family: Roboto;
+    font-size: 14px;
+    .small.text-center
+
+{
+    font-family: Segoe UI-MONOSPACE;
+}
+
