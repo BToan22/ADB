@@ -15,34 +15,22 @@ public partial class WebFinalContext : DbContext
     {
     }
 
-    public virtual DbSet<Lecturer> Lecturers { get; set; }
+    
 
     public virtual DbSet<Province> Provinces { get; set; }
 
-    public virtual DbSet<Student> Students { get; set; }
 
-    public virtual DbSet<Subject> Subjects { get; set; }
 
-    public virtual DbSet<User> Users { get; set; }
+
+	public virtual DbSet<User> Users { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server = LAPTOP-CUOOPR1F; Database=WebFinal;User id=gia;password=123;Trusted_Connection=True;TrustServerCertificate=True;");
+        => optionsBuilder.UseSqlServer("Server = DESKTOP-LS7NMQE; Database = ADB;User id = toan;password = 123;Encrypt=false");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Lecturer>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("PK_Lecturer");
-
-            entity.Property(e => e.Id).HasColumnName("ID");
-            entity.Property(e => e.LecturerEmail).HasMaxLength(50);
-            entity.Property(e => e.LecturerId)
-                .HasMaxLength(50)
-                .HasColumnName("LecturerID");
-            entity.Property(e => e.LecturerName).HasMaxLength(50);
-            entity.Property(e => e.LecturerPhone).HasMaxLength(50);
-        });
+        
 
         modelBuilder.Entity<Province>(entity =>
         {
@@ -56,32 +44,9 @@ public partial class WebFinalContext : DbContext
             entity.Property(e => e.Section).HasMaxLength(255);
         });
 
-        modelBuilder.Entity<Student>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("PK_Student");
 
-            entity.Property(e => e.Id).HasColumnName("ID");
-            entity.Property(e => e.StudentEmail).HasMaxLength(50);
-            entity.Property(e => e.StudentGender).HasMaxLength(50);
-            entity.Property(e => e.StudentId)
-                .HasMaxLength(50)
-                .HasColumnName("StudentID");
-            entity.Property(e => e.StudentName).HasMaxLength(50);
-            entity.Property(e => e.StudentPhone).HasMaxLength(50);
-            entity.Property(e => e.StudentTown).HasMaxLength(50);
-        });
 
-        modelBuilder.Entity<Subject>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("PK_Subject");
-
-            entity.Property(e => e.Id).HasColumnName("ID");
-            entity.Property(e => e.Major).HasMaxLength(50);
-            entity.Property(e => e.SubjectId)
-                .HasMaxLength(50)
-                .HasColumnName("SubjectID");
-            entity.Property(e => e.SubjectName).HasMaxLength(50);
-        });
+        
 
         modelBuilder.Entity<User>(entity =>
         {

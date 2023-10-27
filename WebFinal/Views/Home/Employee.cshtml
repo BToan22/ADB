@@ -1,54 +1,54 @@
 ﻿@{
-	ViewData["Title"] = "Student Page";
+	ViewData["Title"] = "Employees Page";
 	ViewData["js"] = "home.js";
 }
 
 <div id="layoutSidenav_content">
 	<main>
-		<div class="container-fluid px-4 " >
-			<h1 class="mt-4">Student</h1>
+		<div class="container-fluid px-4 ">
+			<h1 class="mt-4">Employees</h1>
 			<ol class="breadcrumb mb-4">
 				<li class="breadcrumb-item"><a href="/Home">Home</a></li>
 				<li class="breadcrumb-item active">Manage</li>
-				<li class="breadcrumb-item active">Student</li>
+				<li class="breadcrumb-item active">Employees</li>
 			</ol>
 		</div>
 		<div class="card mb-4">
 			<div class="mb-3 row ">
 				<div class="d-md-inline-block form-inline me-0 me-md-3 my-2 my-md-0 col-sm-3">
-						<div class="input-group searchlabel1">
-						
-							<input class="form-control" type="text"  id="btnSearchStudent"/>
-							<button class="btn btn-primary" type="button" ><i class="fas fa-search" onclick="searchStudent()"></i></button>
-						</div>
+					<div class="input-group">
+
+						<input class="form-control" type="text" id="btnSearchStudent" />
+						<button class="btn btn-primary" type="button"><i class="fas fa-search" onclick="searchStudent()"></i></button>
 					</div>
-				<div class="col-sm-4 addnew1">
+				</div>
+				<div class="col-sm-4">
 					<button data-bs-toggle="modal" data-bs-target="#modal"
 							onclick="addNewStudent()" class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3 ">
-						Add new Student
+						Add new Employee
 					</button>
 				</div>
-				<div class="col-sm-2 show1">
-					<button onclick="show()" class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3 ">
+				<div class="col-sm-2">
+					<button onclick="showEmployees()" class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3 ">
 						Show
 					</button>
 				</div>
 			</div>
 			<div class="card-header">
 				<i class="fas fa-table me-1"></i>
-				List of Student
+				List of Staff
 			</div>
 			<div>
-				<table id="tblStudent" class="table">
+				<table id="tblEmployees" class="table">
 					<thead>
 						<tr>
 							<th>#</th>
 							<th>ID</th>
 							<th>Name</th>
+							<th>DOB</th>
 							<th>Phone</th>
-							<th>Town</th>
-							<th>Gender</th>
-							<th>Email</th>
+							<th>ContactID</th>
+							<th>PoisionID</th>
 
 						</tr>
 					</thead>
@@ -57,16 +57,16 @@
 							<td>1</td>
 							<td>2011061154</td>
 							<td>Toan</td>
-							<td>09858876</td>
-							<td>HCM</td>
-							<td>Male</td>
-							<td>toan@gmail.com</td>
+							<td>22-09-2002</td>
+							<td>090000</td>
+							<td>HD1</td>
+							<td>MANA</td>
 							<td></td>
 						</tr>
 					</tbody>
 				</table>
 				<nav aria-label="Page navigation example">
-					<ul class="pagination pagecontroller">
+					<ul class="pagination">
 						<li class="page-item"><a class="page-link" onclick="goPrevInStu()" href="javascript:void(0)">Previous</a></li>
 						<li class="page-item">
 							<a class="page-link" href="#">
@@ -77,25 +77,25 @@
 						<li class="page-item"><a class="page-link" onclick="goNextInStu()" href="javascript:void(0)">Next</a></li>
 					</ul>
 				</nav>
-				<script id="studentTemplate" type="text/x-jquery-tmpl">
+				<script id="employeesTemplate" type="text/x-jquery-tmpl">
 					<tr>
 						<td>${STT}</td>
-						<td>${studentId}</td>
-						<td>${studentName}</td>
-						<td>${studentPhone}</td>
-						<td>${studentTown}</td>
-						<td>${studentGender}</td>
-						<td>${studentEmail}</td>
+						<td>${empId}</td>
+						<td>${name}</td> 
+						<td>${dob}</td>
+						<td>${phone}</td>
+						<td>${contractId}</td> 
+						<td>${positionId}</td>
 						<td>
 							<button
 								class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
 								data-bs-toggle="modal" data-bs-target="#modal"
-								onclick="openStudentModal(${id})">
+								onclick="openEmployeesModal(${id})">
 								Info
 							</button>
 							<button class="btn btn-danger btn-block fa-lg gradient-custom-2 mb-3"
 										type="button"
-										onclick="deleteStudent(${id})">
+										onclick="deleteEmployee(${id})">
 									Delete
 							</button>
 						</td>
@@ -132,7 +132,7 @@
 										<input type="text" class="form-control" id="txtPhone">
 									</div>
 									<label for="txtTown" class="col-sm-2 col-form-label">Student Town</label>
-									<div class="col-sm-4">																	
+									<div class="col-sm-4">
 										<input type="text" class="form-control" id="txtTown">
 									</div>
 								</div>

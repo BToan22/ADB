@@ -11,15 +11,37 @@ function selectClass(ctl) {
     }
 }
 
-function getCourse(mj, p) {
+function openEmployeeModal(id) {
+    $("#btnSaveStu").show();
+    $("#btnInsertStu").hide();
+    if (lst != null && id != null && id > 0) {
+        var item = $.grep(lst, function (obj) {
+            return obj.id == id;
+        })[0];
+        $("#txtId").val(item.id);
+        $("#txtStuId").val(item.studentId);
+        $("#txtStuName").val(item.studentName);
+        $("#txtPhone").val(item.studentPhone);
+        $("#txtTown").val(item.studentTown);
+        $("#txtGender").val(item.studentGender);
+        $("#txtEmail").val(item.studentEmail);
+
+    }
+}
+function showEmployees() {
+    getEmployees(1);
+}
+function getEmployees(p) {
+    console.log(p);
     $.ajax({
         type: "POST",
-        url: "/Home/get_course",
-        data: { 'Major': mj, 'Page': p, 'Size': 5 },
+        url: "/Home/get_employees",
+        data: { 'Page': p, 'Size': 5 },
         async: false,
         success: function (res) {
             if (res.success) {
                 let data = res.data;
+
                 if (data.data != null && data.data != undefined) {
                     let stt = (p - 1) * 5 + 1;
                     let data1 = [];
@@ -30,12 +52,12 @@ function getCourse(mj, p) {
                         stt++;
                     }
                     lst = data1;
-                    $("#tblResult tbody").html("");
-                    $("#courseTemplate").tmpl(data1).appendTo("#tblResult tbody");
+                    $("#tblEmployees tbody").html("");
+                    $("#employeesTemplate").tmpl(data1).appendTo("#tblEmployees tbody");
                 }
 
                 totalPage = data.totalPage;
-                $("#curPage").text(p);
+                $("#curSPage").text(p);
 
             } else {
                 alert(res.message);

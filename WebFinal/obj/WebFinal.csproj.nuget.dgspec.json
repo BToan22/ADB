@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\Desktop\\ADB\\WebFinal\\WebFinal.csproj": {}
+    "D:\\testADB\\ADB\\WebFinal\\WebFinal.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\Desktop\\ADB\\WebFinal\\WebFinal.csproj": {
+    "D:\\testADB\\ADB\\WebFinal\\WebFinal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\ADB\\WebFinal\\WebFinal.csproj",
+        "projectUniqueName": "D:\\testADB\\ADB\\WebFinal\\WebFinal.csproj",
         "projectName": "WebFinal",
-        "projectPath": "C:\\Users\\Admin\\Desktop\\ADB\\WebFinal\\WebFinal.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Desktop\\ADB\\WebFinal\\obj\\",
+        "projectPath": "D:\\testADB\\ADB\\WebFinal\\WebFinal.csproj",
+        "packagesPath": "C:\\Users\\HP 9480m\\.nuget\\packages\\",
+        "outputPath": "D:\\testADB\\ADB\\WebFinal\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\HP 9480m\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -84,7 +84,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
