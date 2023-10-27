@@ -114,7 +114,7 @@ namespace WebFinal.Controllers
 			Users? usr = new Users();
 			if (login != null)
 			{
-				string cnStr = "Server =DESKTOP-LS7NMQE; Database = ADB;User id = toan;password = 123;";
+				string cnStr = "Server = LAPTOP-MPPBE2T0; Database=ADB;User id=danh;password=123;";
 				SqlConnection cmn = new SqlConnection(cnStr);
 				try
 				{
@@ -220,7 +220,7 @@ namespace WebFinal.Controllers
 		{
 			try
 			{
-				var db = new WebFinalContext();
+				var db = new AdbContext();
 				var usr = db.Users.Where(x => x.Username == u.Username).FirstOrDefault();
 				if (usr != null)
 				{
@@ -259,14 +259,14 @@ namespace WebFinal.Controllers
 
 		private object? GetProvinces()
 		{
-			var db = new WebFinalContext();
+			var db = new AdbContext();
 			var res = db.Provinces.ToList();
 			return res;
 		}
 		private Province GetProvinceID(String Id)
 		{
 			int id = int.Parse(Id);
-			var db = new WebFinalContext();
+			var db = new AdbContext();
 			var res = db.Provinces.Where(x => x.Id == id).FirstOrDefault();
 			return res;
 		}
@@ -274,7 +274,7 @@ namespace WebFinal.Controllers
 		{
 			try
 			{
-				var db = new WebFinalContext();
+				var db = new AdbContext();
 				var usr = db.Users.Where(x => x.Username == uid).FirstOrDefault();
 				if (usr == null)
 				{

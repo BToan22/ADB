@@ -1,26 +1,26 @@
 ﻿@{
-	ViewData["Title"] = "Subject Page";
+	ViewData["Title"] = "Shift Page";
 	ViewData["js"] = "home.js";
 }
 <div id="layoutSidenav_content">
 	<main>
 		<div class="container-fluid px-4">
-			<h1 class="mt-4">Subject</h1>
+			<h1 class="mt-4">Shift</h1>
 			<ol class="breadcrumb mb-4">
 				<li class="breadcrumb-item"><a href="/Home">Home</a></li>
 				<li class="breadcrumb-item active">Manage</li>
-				<li class="breadcrumb-item active">Subjects</li>
+				<li class="breadcrumb-item active">Shift</li>
 			</ol>
 		</div>
 		<div class="card mb-4">
 			<div class="mb-3 row">
-				<label class="form-label col-sm-2 align-content-lg-between lbposition">Select your Major:</label>
+				<label class="form-label col-sm-2 align-content-lg-between lbposition">Select your Shift:</label>
 				<div class="col-sm-3 slposition">
 					<select id="selClass" class="form-select " onchange="selectClass(this)">
-						<option value="" selected>--- Please select Major ---</option>
-						<option value="Information Technology">Information Technology</option>
-						<option value="Economic">Economic</option>
-						<option value="Law">Law</option>
+						<option value="" selected>--- Please select Shift ---</option>
+						<option value="Shift 1">Shift 1</option>
+						<option value="Shift 2">Shift 2</option>
+						
 					</select>
 				</div>
 				<div class="d-md-inline-block form-inline me-0 me-md-3 my-2 my-md-0 col-sm-3">
@@ -32,33 +32,36 @@
 				<div class="col-sm-3 addnew3">
 					<button data-bs-toggle="modal" data-bs-target="#modal"
 							onclick="addNew()" class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3 ">
-						Add new Subjects
+						Add new Shift
 					</button>
 				</div>
 			</div>
 			<div class="card-header">
 				<i class="fas fa-table me-1"></i>
-				List of Subject
+				List of Shift
 			</div>
 			<div>
 				<table id="tblResult" class="table">
 					<thead>
 						<tr>
-							<th>#</th>
-							<th>ID</th>
+							
+							<th>Attendance ID</th>
+							<th>Day</th>
+							<th>StartTime</th>
+							<th>EndTime</th>
 							<th>Name</th>
-							<th>Credit</th>
-							<th>Major</th>
+							<th>SalaryOfShift</th>
 
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
-							<td> </td>
-							<td> </td>
-							<td> </td>
-							<td> </td>
-							<td> </td>
+							<td>Atd101</td>
+							<td>Monday</td>
+							<td>09:00:00</td>
+							<td>15:00:00</td>
+							<td>Shift 1 Monday</td>
+							<td>300000</td>
 
 							<td> </td>
 						</tr>
@@ -79,11 +82,13 @@
 
 			<script id="courseTemplate" type="text/x-jquery-tmpl">
 				<tr>
-					<td>${STT}</td>
-					<td>${subjectId}</td>
-					<td>${subjectName}</td>
-					<td>${credits}</td>
-					<td>${major}</td>
+					
+					<td>${attendanceId}</td>
+					<td>${day}</td>
+					<td>${startTime}</td>
+					<td>${endTime}</td>
+					<td>${name}</td>
+					<td>${salaryOfShift}</td>
 					<td>
 						<button
 							class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
@@ -103,33 +108,34 @@
 				<div class="modal-dialog modal-lg">
 					<div class="modal-content">
 						<div class="modal-header">
-							<h5 class="modal-title">Subject Detail</h5>
+							<h5 class="modal-title">Shift Detail</h5>
 							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 						</div>
 						<div class="modal-body">
 
 							<div class="mb-3 row">
-								<label for="txtId" class="col-sm-2 col-form-label">#</label>
+							
+								<label for="txtId" class="col-sm-2 col-form-label">Attendance ID</label>
 								<div class="col-sm-2">
-									<input type="text" readonly class="form-control-plaintext" id="txtId" value="email@example.com">
+									<input type="text" class="form-control" id="txtSubId">
 								</div>
-								<label for="txtId" class="col-sm-2 col-form-label">Subject ID</label>
+								<label for="txtId" class="col-sm-2 col-form-label">Salary of Shift</label>
 								<div class="col-sm-2">
 									<input type="text" class="form-control" id="txtSubId">
 								</div>
 							</div>
 							<div class="mb-3 row">
-								<label for="txtName" class="col-sm-2 col-form-label">Subject Name</label>
+								<label for="txtName" class="col-sm-2 col-form-label">Day</label>
 								<div class="col-sm-6">
 									<input type="text" class="form-control" id="txtName">
 								</div>
 							</div>
 							<div class="mb-3 row">
-								<label for="txtCredit" class="col-sm-2 col-form-label">Credit</label>
+								<label for="txtCredit" class="col-sm-2 col-form-label">StartTime</label>
 								<div class="col-sm-2">
 									<input type="number" class="form-control" id="txtCredit">
 								</div>
-								<label for="txtMajor" class="col-sm-2 col-form-label">Major</label>
+								<label for="txtMajor" class="col-sm-2 col-form-label">EndTime</label>
 								<div class="col-sm-4">
 									<input type="text" class="form-control" id="txtMajor">
 								</div>

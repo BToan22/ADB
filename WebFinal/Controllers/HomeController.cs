@@ -38,11 +38,11 @@ namespace WebFinal.Controllers
 			return View();
 
 		}
-		public IActionResult Lecturer()
+		public IActionResult Salary()
 		{
 			return View();
 		}
-		public IActionResult Subjects()
+		public IActionResult Shift()
 		{
 			return View();
 		}
@@ -76,7 +76,57 @@ namespace WebFinal.Controllers
 				return Json(res);
 			}
 		}
+		public IActionResult update_emp(Employee employee)
+		{
+			var c = updateEmp(employee);
+			if (c != null)
+			{
+				var res = new
+				{
+					Success = true,
+					Message = "",
+					Data = c
+				};
+				return Json(res);
+			}
+			else
+			{
+				var res = new
+				{
+					Success = false,
+					Message = "ERROR",
+				};
+				return Json(res);
+			}
 
+		}
+
+		public IActionResult insert_emp(Employee employee, String cond)
+		{
+			var c = insertEmp(employee,cond);
+			if (c != null)
+			{
+				var res = new
+				{
+					Success = true,
+					Message = "",
+					Data = c
+				};
+				return Json(res);
+			}
+			else
+			{
+				var res = new
+				{
+					Success = false,
+					Message = "ERROR",
+				};
+				return Json(res);
+			}
+
+		}
+
+		////////////////////////////////////////////////////////////////////////////////
 
 		private object? getEmployees(int page, int size)
 		{
@@ -107,11 +157,71 @@ namespace WebFinal.Controllers
 
 		}
 
+		
+		private object? updateEmp(Employee e)
+		{
+			try
+			{
+				if (e == null)
+					return null;
+				var db = new AdbContext();
+				var c1 = db.Employees.Where(x => x.EmpId == e.EmpId).FirstOrDefault();
+				if (c1.Name != e.Name)
+					c1.Name = e.Name;
+				if (c1.Dob != e.Dob)
+					c1.Dob = e.Dob;
+
+				if (c1.Phone != e.Phone)
+					c1.Phone = e.Phone;
+				if (c1.PositionId != e.PositionId)
+					c1.PositionId = e.PositionId;
+				if (c1.ContractId != e.ContractId)
+					c1.ContractId = e.ContractId;
+				db.Employees.Update(c1);
+				db.SaveChanges();
+				return c1;
+			}
+			catch (Exception ex)
+			{
+				return null;
+			}
+		}
 
 
-
-
-
+		private object? insertEmp(Employee e, String cond)
+		{
+			try
+			{
+				if (e == null)
+					return null;
+				var db = new AdbContext();
+				var c1 = new Employee();
+				//var c2 = new WorkIn()
+				c1.EmpId = e.EmpId;
+				if (c1.Name != e.Name)
+					c1.Name = e.Name;
+				if (c1.Phone != e.Phone)
+					c1.Phone = e.Phone;
+				if (c1.Dob != e.Dob)
+					c1.Dob = e.Dob;
+				if (c1.PositionId != e.PositionId)
+					c1.PositionId = e.PositionId;
+				if (c1.ContractId != e.ContractId)
+					c1.ContractId = e.ContractId;
+				var c2 = new Contract();
+				
+				c2.ContractId = e.ContractId;
+				c2.ContractDescription = cond;
+				db.Contracts.Add(c2);
+				db.Employees.Add(c1);
+				db.SaveChanges();
+				return c1;
+			}
+			catch (Exception ex)
+			{
+				return null;
+			}
+		}
 
 
 

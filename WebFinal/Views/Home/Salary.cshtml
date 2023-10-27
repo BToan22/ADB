@@ -1,5 +1,5 @@
 ﻿@{
-	ViewData["Title"] = "Lecturer Page";
+	ViewData["Title"] = "Salary Page";
 	ViewData["js"] = "home.js";
 
 }
@@ -7,11 +7,11 @@
 <div id="layoutSidenav_content">
 	<main>
 		<div class="container-fluid px-4">
-			<h1 class="mt-4">Lecturer</h1>
+			<h1 class="mt-4">Salary</h1>
 			<ol class="breadcrumb mb-4">
 				<li class="breadcrumb-item"><a href="/Home">Home</a></li>
 				<li class="breadcrumb-item active">Manage</li>
-				<li class="breadcrumb-item active">Lecturer</li>
+				<li class="breadcrumb-item active">Salary</li>
 			</ol>
 		</div>
 		<div class="card mb-4">
@@ -19,14 +19,14 @@
 				<div class="d-md-inline-block form-inline me-0 me-md-3 my-2 my-md-0 col-sm-4">
 					<div class="input-group searchlabel2">
 
-							<input class="form-control" type="text"  id="btnSearchLecturer"/>
-							<button class="btn btn-primary" type="button" ><i class="fas fa-search" onclick="searchLecturer()"></i></button>
+							<input class="form-control" type="text"  id="btnSearchSalary"/>
+							<button class="btn btn-primary" type="button" ><i class="fas fa-search" onclick="searchSalary()"></i></button>
 						</div>
 				</div>
 				<div class="col-sm-4 addnew2">
 					<button data-bs-toggle="modal" data-bs-target="#modal" onclick="addNewLec()"
 						class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3 ">
-						Add new Lecturer
+						Add new Salary
 					</button>
 				</div>
 				<div class="col-sm-2 show2">
@@ -37,30 +37,28 @@
 			</div>
 			<div class="card-header">
 				<i class="fas fa-table me-1"></i>
-				List of Lecturer
+				List of Salary
 			</div>
 			<div class="card-body">
-				<table id="tblLecturer" class="table">
+				<table id="tblSalary" class="table">
 					<thead>
 						<tr>
-							<th>#</th>
-							<th>ID</th>
-							<th>Name</th>
-							<th>Phone</th>
-							<th>Email</th>
+							
+							<th>EmpID</th>
+							<th>Total Salary</th>
+							<th>Total Shift</th>
+							<th>Date</th>
 
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
-							<td>1</td>
-							<td>2011061154</td>
-							<td>Toan</td>
-							<td>09858876</td>
-							<td>toan@gmail.com</td>
-
-							<td>
-							</td>
+							
+							<td>101</td>
+							<td>9000000</td>
+							<td>30</td>
+							<td>2023-30-10</td>
+							
 						</tr>
 					</tbody>
 				</table>
@@ -77,13 +75,13 @@
 								href="javascript:void(0)">Next</a></li>
 					</ul>
 				</nav>
-				<script id="LecturerTemplate" type="text/x-jquery-tmpl">
+				<script id="SalaryTemplate" type="text/x-jquery-tmpl">
 					<tr>
 						<td>${STT}</td>
-						<td>${lecturerId}</td>
-						<td>${lecturerName}</td>
-						<td>${lecturerPhone}</td>
-						<td>${lecturerEmail}</td>
+						<td>${SalaryId}</td>
+						<td>${SalaryName}</td>
+						<td>${SalaryPhone}</td>
+						<td>${SalaryEmail}</td>
 						<td>
 							<button
 								class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
@@ -110,23 +108,20 @@
 							<div class="modal-body">
 
 								<div class="mb-3 row">
-									<label for="txtId" class="col-sm-2 col-form-label">#</label>
-									<div class="col-sm-2">
-										<input type="text" readonly class="form-control-plaintext" id="txtId" value="">
-									</div>
-									<label for="txtLecId" class="col-sm-2 col-form-label">Lecturer ID</label>
+									
+									<label for="txtLecId" class="col-sm-2 col-form-label">Emp ID</label>
 									<div class="col-sm-4">
 										<input type="text" class="form-control" id="txtLecId">
 									</div>
 								</div>
 								<div class="mb-3 row">
-									<label for="txtLecName" class="col-sm-2 col-form-label">Lecturer Name</label>
+									<label for="txtLecName" class="col-sm-2 col-form-label">Total Salary</label>
 									<div class="col-sm-6">
 										<input type="text" class="form-control" id="txtLecName">
 									</div>
 								</div>
 								<div class="mb-3 row">
-									<label for="txtLecPhone" class="col-sm-2 col-form-label">Lecturer Phone</label>
+									<label for="txtLecPhone" class="col-sm-2 col-form-label">Total Shift</label>
 									<div class="col-sm-3">
 										<input type="text" class="form-control" id="txtLecPhone">
 									</div>
@@ -135,7 +130,7 @@
 								</div>
 								<div class="mb-3 row">
 									
-									<label for="txtLecEmail" class="col-sm-2 col-form-label">Lecturer Email</label>
+									<label for="txtLecEmail" class="col-sm-2 col-form-label">Date</label>
 									<div class="col-sm-4">
 										<input type="text" class="form-control" id="txtLecEmail">
 									</div>

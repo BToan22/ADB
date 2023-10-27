@@ -19,12 +19,12 @@
 					<div class="input-group">
 
 						<input class="form-control" type="text" id="btnSearchStudent" />
-						<button class="btn btn-primary" type="button"><i class="fas fa-search" onclick="searchStudent()"></i></button>
+						<button class="btn btn-primary" type="button"><i class="fas fa-search" onclick="searchEmp()"></i></button>
 					</div>
 				</div>
 				<div class="col-sm-4">
 					<button data-bs-toggle="modal" data-bs-target="#modal"
-							onclick="addNewStudent()" class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3 ">
+							onclick="addNewEmployee()" class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3 ">
 						Add new Employee
 					</button>
 				</div>
@@ -42,55 +42,58 @@
 				<table id="tblEmployees" class="table">
 					<thead>
 						<tr>
-							<th>#</th>
+							
 							<th>ID</th>
 							<th>Name</th>
 							<th>DOB</th>
 							<th>Phone</th>
 							<th>ContactID</th>
 							<th>PoisionID</th>
+							<th>ContractDescription</th>
 
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
-							<td>1</td>
-							<td>2011061154</td>
+							
+							<td>101</td>
 							<td>Toan</td>
 							<td>22-09-2002</td>
 							<td>090000</td>
 							<td>HD1</td>
 							<td>MANA</td>
+							<td>abcxyx</td>
 							<td></td>
 						</tr>
 					</tbody>
 				</table>
 				<nav aria-label="Page navigation example">
 					<ul class="pagination">
-						<li class="page-item"><a class="page-link" onclick="goPrevInStu()" href="javascript:void(0)">Previous</a></li>
+						<li class="page-item"><a class="page-link" onclick="goPrev()" href="javascript:void(0)">Previous</a></li>
 						<li class="page-item">
 							<a class="page-link" href="#">
-								<span id="curSPage">1</span>
+								<span id="curPage">1</span>
 							</a>
 						</li>
 
-						<li class="page-item"><a class="page-link" onclick="goNextInStu()" href="javascript:void(0)">Next</a></li>
+						<li class="page-item"><a class="page-link" onclick="goNext()" href="javascript:void(0)">Next</a></li>
 					</ul>
 				</nav>
 				<script id="employeesTemplate" type="text/x-jquery-tmpl">
 					<tr>
-						<td>${STT}</td>
+						
 						<td>${empId}</td>
 						<td>${name}</td> 
 						<td>${dob}</td>
 						<td>${phone}</td>
 						<td>${contractId}</td> 
 						<td>${positionId}</td>
+						<td>${contractDescription}</td>
 						<td>
 							<button
 								class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
 								data-bs-toggle="modal" data-bs-target="#modal"
-								onclick="openEmployeesModal(${id})">
+								onclick="openEmployeesModal(${empId})">
 								Info
 							</button>
 							<button class="btn btn-danger btn-block fa-lg gradient-custom-2 mb-3"
@@ -105,54 +108,59 @@
 					<div class="modal-dialog modal-lg">
 						<div class="modal-content">
 							<div class="modal-header">
-								<h5 class="modal-title">Student Detail</h5>
+								<h5 class="modal-title">Employee Detail</h5>
 								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 							</div>
 							<div class="modal-body">
 
 								<div class="mb-3 row">
-									<label for="txtId" class="col-sm-2 col-form-label">#</label>
-									<div class="col-sm-2">
-										<input type="text" readonly class="form-control-plaintext" id="txtId" value="">
-									</div>
-									<label for="txtStuId" class="col-sm-2 col-form-label">Student ID</label>
+									
+									<label for="txtEmpId" class="col-sm-2 col-form-label">Employee ID</label>
 									<div class="col-sm-4">
-										<input type="text" class="form-control" id="txtStuId">
+										<input type="text" class="form-control" id="txtEmpId">
 									</div>
 								</div>
 								<div class="mb-3 row">
-									<label for="txtStuName" class="col-sm-2 col-form-label">Student Name</label>
+									<label for="txtEmpName" class="col-sm-2 col-form-label">Employee Name</label>
 									<div class="col-sm-6">
-										<input type="text" class="form-control" id="txtStuName">
+										<input type="text" class="form-control" id="txtEmpName">
 									</div>
 								</div>
 								<div class="mb-3 row">
-									<label for="txtPhone" class="col-sm-2 col-form-label">Student Phone</label>
+									<label for="txtPhone" class="col-sm-2 col-form-label">Phone</label>
 									<div class="col-sm-3">
 										<input type="text" class="form-control" id="txtPhone">
 									</div>
-									<label for="txtTown" class="col-sm-2 col-form-label">Student Town</label>
+									<label for="txtDOB" class="col-sm-2 col-form-label">Date Of Birth</label>
 									<div class="col-sm-4">
-										<input type="text" class="form-control" id="txtTown">
+										<input type="text" class="form-control" id="txtDOB">
 									</div>
 								</div>
 
 								<div class="mb-3 row">
-									<label for="txtGender" class="col-sm-2 col-form-label">Student Gender</label>
-									<div class="col-sm-2">
-										<input type="text" class="form-control" id="txtGender">
+									<label for="txtPos" class="col-sm-2 col-form-label">Position</label>
+									<div class="col-sm-4 slposition">
+										<select id="selPos" class="form-select " onchange="selectPosition(this)">
+											<option value="" selected>--- Please select Position ---</option>
+											<option value="BARB">BARBOY</option>
+											<option value="BARIS">BARISTA</option>
+											<option value="MANA">MANAGER</option>
+										</select>
 									</div>
-									<label for="txtEmail" class="col-sm-2 col-form-label">Student Email</label>
+									<label for="txtCon" class="col-sm-2 col-form-label">Contract</label>
 									<div class="col-sm-4">
-										<input type="text" class="form-control" id="txtEmail">
+										<div class="col-sm-4">
+											<input type="text" class="form-control" id="txtCon">
+											<input type="text" class="form-control" id="txtConDes">
+										</div>
 									</div>
 								</div>
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-								<button id="btnSaveStu" type="button" class="btn btn-primary" onclick="saveStudent()">Save changes</button>
-								<button id="btnInsertStu" type="button" class="btn btn-success"
-										data-bs-dismiss="modal" onclick="insertStudent()">
+								<button id="btnSaveEmp" type="button" class="btn btn-primary" onclick="saveEmp()">Save changes</button>
+								<button id="btnInsertEmp" type="button" class="btn btn-success"
+										data-bs-dismiss="modal" onclick="insertEmp()">
 									Add
 								</button>
 							</div>
