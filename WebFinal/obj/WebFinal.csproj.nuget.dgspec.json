@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\Desktop\\CMP175_WebFinalProject\\WebFinal\\WebFinal.csproj": {}
+    "C:\\Users\\Admin\\Desktop\\ADB\\WebFinal\\WebFinal.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\Desktop\\CMP175_WebFinalProject\\WebFinal\\WebFinal.csproj": {
+    "C:\\Users\\Admin\\Desktop\\ADB\\WebFinal\\WebFinal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\CMP175_WebFinalProject\\WebFinal\\WebFinal.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\ADB\\WebFinal\\WebFinal.csproj",
         "projectName": "WebFinal",
-        "projectPath": "C:\\Users\\Admin\\Desktop\\CMP175_WebFinalProject\\WebFinal\\WebFinal.csproj",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\ADB\\WebFinal\\WebFinal.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Desktop\\CMP175_WebFinalProject\\WebFinal\\obj\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\ADB\\WebFinal\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",

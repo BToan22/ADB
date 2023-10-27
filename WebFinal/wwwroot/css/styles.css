@@ -4423,7 +4423,11 @@ textarea.form-control-lg {
 .navbar-toggler:hover {
     text-decoration: none;
 }
-
+img.img-fluid-1 {
+    width: 63px;
+    /*height: 46px;*/
+    padding-bottom: 2px;
+}
 .navbar-toggler:focus {
     text-decoration: none;
     outline: 0;
@@ -5599,7 +5603,65 @@ textarea.form-control-lg {
             margin-top: -1px;
             border-top-width: 1px;
         }
+/*panel*/
+label.form-label.col-sm-2.align-content-lg-between.lbposition {
+    padding-left: 43px;
+    padding-top: 24px;
+    padding-bottom: 0px;
+}
+.col-sm-3.slposition {
+    padding-right: 29px;
+    padding-top: 19px;
+    padding-bottom: 0px;
+}
+.col-sm-2.show1 {
+    padding-left: 310px;
+    padding-top: 19px;
+    padding-bottom: 0px;
+}
+.col-sm-2.show2 {
+    padding-left: 241px;
+    padding-top: 19px;
+    padding-bottom: 0px;
+}
+.col-sm-4.addnew1 {
+    padding-left: 205px;
+    padding-top: 19px;
+    padding-bottom: 0px;
+}
+.col-sm-4.addnew2 {
+    padding-left: 202px;
+    padding-top: 19px;
+    padding-bottom: 0px;
+}
+.col-sm-3.addnew3 {
+    padding-left: 110px;
+    padding-top: 19px;
+    padding-bottom: 0px;
+}
 
+.input-group.searchlabel1 {
+    padding-left: 25px;
+    padding-top: 19px;
+    padding-bottom: 0px;
+    /* margin-right: 0px; */
+}
+.input-group.searchlabel2 {
+    padding-left: 40px;
+    padding-top: 19px;
+    padding-bottom: 0px;
+}
+.input-group.searchlabel3 {
+    padding-left: 28px;
+    padding-top: 19px;
+    padding-bottom: 0px;
+}
+
+ul.pagination.pagecontroller {
+    padding-left: 53rem;
+    padding-top: 19px;
+    padding-bottom: 0px;
+}
 .list-group-horizontal {
     flex-direction: row;
 }
@@ -12127,6 +12189,9 @@ body {
                 .sb-sidenav .sb-sidenav-menu .nav .nav-link.collapsed .sb-sidenav-collapse-arrow {
                     transform: rotate(-90deg);
                 }
+                .sb-sidenav .sb-sidenav-menu .nav .nav-link:hover {
+                    background: linear-gradient( 135deg, rgb(56 0 108) 0%, rgb(58 182 173) 100% );
+                }
 
             .sb-sidenav .sb-sidenav-menu .nav .sb-sidenav-menu-nested {
                 margin-left: 1.5rem;
@@ -12380,7 +12445,7 @@ ul.dropdown-menu.dropdown-menu-end.show {
     background: linear-gradient( 135deg, rgb(178 110 240) 0%, rgb(63 242 229) 100% );
 }
 body.sb-nav-fixed.vsc-initialized {
-    background-image: url(https://wallpapercave.com/wp/wp8174943.jpg);
+    background-image: url(../img/6502058.jpg);
     background-repeat: no-repeat;
     background-position: 50% 0;
     background-size: cover;

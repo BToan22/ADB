@@ -17,19 +17,19 @@
 		<div class="card mb-4">
 			<div class="mb-3 row">
 				<div class="d-md-inline-block form-inline me-0 me-md-3 my-2 my-md-0 col-sm-4">
-					<div class="input-group">
+					<div class="input-group searchlabel2">
 
 							<input class="form-control" type="text"  id="btnSearchLecturer"/>
 							<button class="btn btn-primary" type="button" ><i class="fas fa-search" onclick="searchLecturer()"></i></button>
 						</div>
 				</div>
-				<div class="col-sm-4">
+				<div class="col-sm-4 addnew2">
 					<button data-bs-toggle="modal" data-bs-target="#modal" onclick="addNewLec()"
 						class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3 ">
 						Add new Lecturer
 					</button>
 				</div>
-				<div class="col-sm-2">
+				<div class="col-sm-2 show2">
 					<button onclick="showLec()" class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3 ">
 						Show
 					</button>
@@ -65,7 +65,7 @@
 					</tbody>
 				</table>
 				<nav aria-label="Page navigation example">
-					<ul class="pagination">
+					<ul class="pagination pagecontroller">
 						<li class="page-item"><a class="page-link" onclick="goPrevInLec()"
 								href="javascript:void(0)">Previous</a></li>
 						<li class="page-item">

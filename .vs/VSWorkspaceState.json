@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\WebFinal"
+    "\\WebFinal",
+    "\\WebFinal\\Controllers",
+    "\\WebFinal\\Views",
+    "\\WebFinal\\Views\\Shared"
   ],
-  "SelectedNode": "\\WebFinal\\WebFinal.csproj.user",
   "PreviewInSolutionExplorer": false
 }

@@ -14,8 +14,8 @@
 		</div>
 		<div class="card mb-4">
 			<div class="mb-3 row">
-				<label class="form-label col-sm-2 align-content-lg-between">Select your Major:</label>
-				<div class="col-sm-3">
+				<label class="form-label col-sm-2 align-content-lg-between lbposition">Select your Major:</label>
+				<div class="col-sm-3 slposition">
 					<select id="selClass" class="form-select " onchange="selectClass(this)">
 						<option value="" selected>--- Please select Major ---</option>
 						<option value="Information Technology">Information Technology</option>
@@ -24,12 +24,12 @@
 					</select>
 				</div>
 				<div class="d-md-inline-block form-inline me-0 me-md-3 my-2 my-md-0 col-sm-3">
-					<div class="input-group">
+					<div class="input-group searchlabel3">
 						<input class="form-control" type="text" id="btnSearch" />
 						<button class="btn btn-primary" type="button"><i class="fas fa-search" onclick="search()"></i></button>
 					</div>
 				</div>
-				<div class="col-sm-3">
+				<div class="col-sm-3 addnew3">
 					<button data-bs-toggle="modal" data-bs-target="#modal"
 							onclick="addNew()" class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3 ">
 						Add new Subjects
@@ -65,7 +65,7 @@
 					</tbody>
 				</table>
 				<nav aria-label="Page navigation example">
-					<ul class="pagination">
+					<ul class="pagination pagecontroller">
 						<li class="page-item"><a class="page-link" onclick="goPrev()" href="javascript:void(0)">Previous</a></li>
 						<li class="page-item">
 							<a class="page-link" href="#">
